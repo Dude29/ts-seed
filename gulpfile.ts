@@ -25,6 +25,9 @@ export async function testAll() {
 	return run('mocha ./build/test/')
 }
 
+export const test = series(build, testAll)
+test.description = 'Runs all the apps tests'
+
 launch.description = 'Runs the app'
 export async function launch() {
 	return run('node build/main.js')

@@ -4,12 +4,12 @@
   "description": "Starting point for node.js and typescript projects",
   "main": "build/main.js",
   "scripts": {
-    "test": "gulp test",
-    "build": "gulp",
-    "start": "gulp launch",
-    "clean": "gulp clean",
-    "debug": "gulp debug",
-    "lint": "gulp lint"
+    "test": "mocha ./build/test/",
+    "build": "tsc",
+    "start": "node build/main.js",
+    "clean": "rm -rf build/",
+    "debug": "node build/main.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",

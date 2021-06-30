@@ -2,15 +2,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "debug via gulp",
             "type": "node",
             "request": "launch",
-            "cwd": "${workspaceFolder}",
-            "runtimeExecutable": "gulp",
+            "name": "Launch via NPM",
+            "runtimeExecutable": "npm",
             "runtimeArgs": [
-                "debug"
+                "run-script",
+                "debug",
             ],
-            "port": 6969
-        }
+            "port": 6969,
+            "skipFiles": [
+                "<node_internals>/**",
+                "${workspaceFolder}/node_modules/**",
+            ],
+            "outFiles": [
+                "${workspaceFolder}/build/**/*.js",
+            ]
+        },
     ]
 }
